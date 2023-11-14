@@ -27,7 +27,7 @@ First, we publish the known transform:
 ```
 rosrun tf static_transform_publisher -0.140 0 0 at494 world 1000
 
-rosrun tf static_transform_publisher -0.122 0 0 tag#0 world 1000
+rosrun tf static_transform_publisher -0.122 0 0 0 0 0 tag#0 world 1000
 ```
 
 Then, we clone and configure [apriltag_ros](https://github.com/AprilRobotics/apriltag_ros/), changing the settings for our fiducial. We set `tag_family` in `settings.yml` to our `tagStandard41h12`, and setup the fiducial in `tags.yml`:
