@@ -49,7 +49,7 @@ Start the camera stream:
 ```
 roslaunch realsense2_camera rs_camera.launch
 
-roslaunch realsense2_camera rs_d435_camera_with_model.launch
+roslaunch realsense2_camera rs_camera.launch
 ```
 
 and start the AprilTag continuous detection node, making it read images from the camera stream, and publish the transforms:
@@ -80,6 +80,20 @@ At time 1603444940.190
 - Rotation: in Quaternion [0.712, -0.004, 0.702, -0.010]
             in RPY (radian) [-2.163, -1.548, -0.970]
             in RPY (degree) [-123.957, -88.668, -55.549]
+
+
+
+At time 1699926720.274
+- Translation: [-0.025, 0.049, 0.023]
+- Rotation: in Quaternion [0.685, 0.004, -0.049, 0.726]
+            in RPY (radian) [1.510, 0.073, -0.066]
+            in RPY (degree) [86.539, 4.187, -3.764]
+At time 1699926721.275
+- Translation: [-0.025, 0.050, 0.022]
+- Rotation: in Quaternion [0.686, 0.003, -0.049, 0.726]
+            in RPY (radian) [1.511, 0.072, -0.068]
+            in RPY (degree) [86.596, 4.135, -3.903]
+
 ```
 
 We can now use this transform via a `static_transform_publisher` for our robotic tasks. These computed transforms should be double checked against its theoretical values for accuracy. 
