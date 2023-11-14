@@ -26,6 +26,8 @@ First, we publish the known transform:
 
 ```
 rosrun tf static_transform_publisher -0.140 0 0 at494 world 1000
+
+rosrun tf static_transform_publisher -0.122 0 0 tag#0 world 1000
 ```
 
 Then, we clone and configure [apriltag_ros](https://github.com/AprilRobotics/apriltag_ros/), changing the settings for our fiducial. We set `tag_family` in `settings.yml` to our `tagStandard41h12`, and setup the fiducial in `tags.yml`:
@@ -35,12 +37,19 @@ standalone_tags:
 [
   { id:494, size: 0.08, name: "at494" }
 ]
+
+[
+  { id:0, size: 0.037, name: "tag#0" }
+]
+
 ```
 
 Start the camera stream:
 
 ```
 roslaunch realsense2_camera rs_camera.launch
+
+roslaunch realsense2_camera rs_d435_camera_with_model.launch
 ```
 
 and start the AprilTag continuous detection node, making it read images from the camera stream, and publish the transforms:
@@ -58,6 +67,9 @@ Now that we know the transform between the camera and the fiducial, and there is
 
 ```
 rosrun tf tf_echo camera_link robotiq_arg2f_base_link
+
+rosrun tf tf_echo camera_link link7
+
 ```
 
 We should see something like:
