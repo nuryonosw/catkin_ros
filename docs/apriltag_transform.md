@@ -97,3 +97,8 @@ At time 1699926721.275
 ```
 
 We can now use this transform via a `static_transform_publisher` for our robotic tasks. These computed transforms should be double checked against its theoretical values for accuracy. 
+
+```
+rosrun tf static_transform_publisher -0.025 0.050 0.022 0.686 0.003 -0.049 0.726 camera_link link7 1000
+
+```
