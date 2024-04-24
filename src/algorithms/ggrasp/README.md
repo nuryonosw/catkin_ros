@@ -67,5 +67,7 @@ Run `guild operations` to see a list of operations. For example, to train the gg
 
     guild run ggcnn2:train loss=smooth_l1_loss smoothness_weight=0.5 dataset=CornellDataset dataset-path=/home
 
+    guild run ggcnn2:train loss=mse_loss smoothness_weight=0.5 dataset=CornellDataset dataset-path=/home
+
 Sample trained models can be found in the `saved_models` folder.
 
